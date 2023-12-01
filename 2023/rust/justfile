@@ -1,0 +1,10 @@
+default:
+    just --list
+
+set positional-arguments
+
+@day day:
+    cargo new day-$1
+    rm ./day-$1/src/*.rs
+    mkdir ./day-$1/src/bin/
+    cp template/src/bin/* ./day-$1/src/bin/
